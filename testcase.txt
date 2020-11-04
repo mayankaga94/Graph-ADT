@@ -1,0 +1,208 @@
+Graph g1;
+ Edge *e_ptr; 
+ Vertex *v1, *v2;
+  
+ // Create an empty graph g1;
+ g1=CreateEmptyGraph();
+  
+ // Create first connected component 
+ // Insert edge (0,0)-(0,10)
+ e_ptr = (Edge*) malloc(sizeof(Edge));
+ assert(e_ptr != NULL);
+ v1=(Vertex*) malloc(sizeof(Vertex));
+ assert(v1 != NULL);
+ v2=(Vertex *) malloc(sizeof(Vertex));
+ assert(v2 != NULL);
+ v1->x=0;
+ v1->y=0;
+ v2->x=0;
+ v2->y=10;
+ e_ptr->p1=v1;
+ e_ptr->p2=v2;
+ if (InsertEdge(g1, e_ptr)==0) printf("edge exists\n");
+
+ // Insert edge (0,0)-(5,6)
+ e_ptr = (Edge*) malloc(sizeof(Edge));
+ assert(e_ptr != NULL);
+ v1=(Vertex*) malloc(sizeof(Vertex));
+ assert(v1 != NULL);
+ v2=(Vertex *) malloc(sizeof(Vertex));
+ assert(v2 != NULL);
+ v1->x=0;
+ v1->y=0;
+ v2->x=5;
+ v2->y=6;
+ e_ptr->p1=v1;
+ e_ptr->p2=v2;
+ if (InsertEdge(g1, e_ptr)==0) printf("edge exists\n");
+ 
+ // Insert edge (0, 10)-(10, 10)
+ e_ptr = (Edge*) malloc(sizeof(Edge));
+ assert(e_ptr != NULL);
+ v1=(Vertex*) malloc(sizeof(Vertex));
+ assert(v1 != NULL);
+ v2=(Vertex *) malloc(sizeof(Vertex));
+ assert(v2 != NULL);
+ v1->x=0;
+ v1->y=10;
+ v2->x=10;
+ v2->y=10;
+ e_ptr->p1=v1;
+ e_ptr->p2=v2;
+ if (InsertEdge(g1, e_ptr)==0) printf("edge exists\n");
+ 
+ // Insert edge (0,10)-(5,6)
+ e_ptr = (Edge*) malloc(sizeof(Edge));
+ assert(e_ptr != NULL);
+ v1=(Vertex*) malloc(sizeof(Vertex));
+ assert(v1 != NULL);
+ v2=(Vertex *) malloc(sizeof(Vertex));
+ assert(v2 != NULL);
+ v1->x=0;
+ v1->y=10;
+ v2->x=5;
+ v2->y=6;
+ e_ptr->p1=v1;
+ e_ptr->p2=v2;
+ if (InsertEdge(g1, e_ptr)==0) printf("edge exists\n");
+ 
+ // Insert edge (0,0)-(5,4)
+ e_ptr = (Edge*) malloc(sizeof(Edge));
+ assert(e_ptr != NULL);
+ v1=(Vertex*) malloc(sizeof(Vertex));
+ assert(v1 != NULL);
+ v2=(Vertex *) malloc(sizeof(Vertex));
+ assert(v2 != NULL);
+ v1->x=0;
+ v1->y=0;
+ v2->x=5;
+ v2->y=4;
+ e_ptr->p1=v1;
+ e_ptr->p2=v2;
+ if (InsertEdge(g1, e_ptr)==0) printf("edge exists\n");
+ 
+ // Insert edge (5, 4)-(10, 4)
+ e_ptr = (Edge*) malloc(sizeof(Edge));
+ assert(e_ptr != NULL);
+ v1=(Vertex*) malloc(sizeof(Vertex));
+ assert(v1 != NULL);
+ v2=(Vertex *) malloc(sizeof(Vertex));
+ assert(v2 != NULL);
+ v1->x=5;
+ v1->y=4;
+ v2->x=10;
+ v2->y=4;
+ e_ptr->p1=v1;
+ e_ptr->p2=v2;
+ if (InsertEdge(g1, e_ptr)==0) printf("edge exists\n");
+ 
+ // Insert edge (5,6)-(10,6)
+ e_ptr = (Edge*) malloc(sizeof(Edge));
+ assert(e_ptr != NULL);
+ v1=(Vertex*) malloc(sizeof(Vertex));
+ assert(v1 != NULL);
+ v2=(Vertex *) malloc(sizeof(Vertex));
+ assert(v2 != NULL);
+ v1->x=5;
+ v1->y=6;
+ v2->x=10;
+ v2->y=6;
+ e_ptr->p1=v1;
+ e_ptr->p2=v2;
+ if (InsertEdge(g1, e_ptr)==0) printf("edge exists\n");
+ 
+ // Insert edge (10,10)-(10,6)
+ e_ptr = (Edge*) malloc(sizeof(Edge));
+ assert(e_ptr != NULL);
+ v1=(Vertex*) malloc(sizeof(Vertex));
+ assert(v1 != NULL);
+ v2=(Vertex *) malloc(sizeof(Vertex));
+ assert(v2 != NULL);
+ v1->x=10;
+ v1->y=10;
+ v2->x=10;
+ v2->y=6;
+ e_ptr->p1=v1;
+ e_ptr->p2=v2;
+ if (InsertEdge(g1, e_ptr)==0) printf("edge exists\n");
+ 
+ // Insert edge (10, 6)-(10, 4)
+ e_ptr = (Edge*) malloc(sizeof(Edge));
+ assert(e_ptr != NULL);
+ v1=(Vertex*) malloc(sizeof(Vertex));
+ assert(v1 != NULL);
+ v2=(Vertex *) malloc(sizeof(Vertex));
+ assert(v2 != NULL);
+ v1->x=10;
+ v1->y=6;
+ v2->x=10;
+ v2->y=4;
+ e_ptr->p1=v1;
+ e_ptr->p2=v2;
+ if (InsertEdge(g1, e_ptr)==0) printf("edge exists\n");
+
+ printf("Nv: %d, Ne: %d\n",g1->nV,g1->nE);
+ ShowGraph(g1);
+
+  // Delete edge (5,4)-(0,0)
+ e_ptr = (Edge*) malloc(sizeof(Edge));
+ assert(e_ptr != NULL);
+ v1=(Vertex*) malloc(sizeof(Vertex));
+ assert(v1 != NULL);
+ v2=(Vertex *) malloc(sizeof(Vertex));
+ assert(v2 != NULL);
+ v1->x=5;
+ v1->y=4;
+ v2->x=0;
+ v2->y=0;
+ e_ptr->p1=v1;
+ e_ptr->p2=v2; 	 
+ DeleteEdge(g1, e_ptr);
+
+ // Delete edge (0,10)-(0,0)
+ e_ptr = (Edge*) malloc(sizeof(Edge));
+ assert(e_ptr != NULL);
+ v1=(Vertex*) malloc(sizeof(Vertex));
+ assert(v1 != NULL);
+ v2=(Vertex *) malloc(sizeof(Vertex));
+ assert(v2 != NULL);
+ v1->x=0;
+ v1->y=10;
+ v2->x=0;
+ v2->y=0;
+ e_ptr->p1=v1;
+ e_ptr->p2=v2; 	 
+ DeleteEdge(g1, e_ptr);
+
+ // Delete edge (5,6)-(0,0)
+ e_ptr = (Edge*) malloc(sizeof(Edge));
+ assert(e_ptr != NULL);
+ v1=(Vertex*) malloc(sizeof(Vertex));
+ assert(v1 != NULL);
+ v2=(Vertex *) malloc(sizeof(Vertex));
+ assert(v2 != NULL);
+ v1->x=5;
+ v1->y=6;
+ v2->x=0;
+ v2->y=0;
+ e_ptr->p1=v1;
+ e_ptr->p2=v2; 	 
+ DeleteEdge(g1, e_ptr);
+
+ // Delete edge (10,4)-(5,4)
+ e_ptr = (Edge*) malloc(sizeof(Edge));
+ assert(e_ptr != NULL);
+ v1=(Vertex*) malloc(sizeof(Vertex));
+ assert(v1 != NULL);
+ v2=(Vertex *) malloc(sizeof(Vertex));
+ assert(v2 != NULL);
+ v1->x=10;
+ v1->y=4;
+ v2->x=5;
+ v2->y=4;
+ e_ptr->p1=v1;
+ e_ptr->p2=v2; 	 
+ DeleteEdge(g1, e_ptr);
+
+ printf("Nv: %d, Ne: %d\n",g1->nV,g1->nE);
+ ShowGraph(g1);
